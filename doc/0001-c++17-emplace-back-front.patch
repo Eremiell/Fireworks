@@ -1,0 +1,36 @@
+--- plf_list.h	2018-05-12 13:55:42.000000000 +0200
++++ plf_list.h	2018-06-15 00:22:23.961832503 +0200
+@@ -1970,9 +1970,24 @@
+ 			}
+ 		}
+ 
++		#if __cplusplus >= 201703L
++		template<typename... arguments>
++		inline PLF_LIST_FORCE_INLINE reference emplace_back(arguments &&... parameters)
++		{
++			emplace(end_iterator, std::forward<arguments>(parameters)...);
++			return back();
++		}
++
+ 
+ 
+ 		template<typename... arguments>
++		inline PLF_LIST_FORCE_INLINE reference emplace_front(arguments &&... parameters)
++		{
++			emplace(begin_iterator, std::forward<arguments>(parameters)...);
++			return front();
++		}
++		#else
++		template<typename... arguments>
+ 		inline PLF_LIST_FORCE_INLINE void emplace_back(arguments &&... parameters)
+ 		{
+ 			emplace(end_iterator, std::forward<arguments>(parameters)...);
+@@ -1985,7 +2000,7 @@
+ 		{
+ 			emplace(begin_iterator, std::forward<arguments>(parameters)...);
+ 		}
+-
++		#endif
+ 
+ 	#endif
+ 
