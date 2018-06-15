@@ -56,7 +56,7 @@ namespace fw {
 
 		#ifndef NO_AUDIO
 		// Sets sound volume
-		constexpr float volume(50.0f);
+		constexpr float volume{50.0f};
 
 		// Sets number of sound files used, only change if you add or remove sounds, make sure the files follow the naming pattern
 		constexpr std::size_t sound_files{5};
