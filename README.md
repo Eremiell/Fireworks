@@ -9,3 +9,5 @@ It uses [SFML](https://www.sfml-dev.org/) for graphics and audio, [PCG](http://w
 I also hacked in C++17 style emplace_back and emplace_front into the PLF list for this to work as intended. :) [Patch](doc/0001-c++17-emplace-back-front.patch) provided until this appears in the actual lib.
 
 Look into [Design Document](doc/design_document.md) for some more talk and phases of development.
+
+Grab the [firework sounds](https://drive.google.com/drive/folders/1WYTGjCrf1n8Z8CD4xMHZrBM5GynFpOlb?usp=sharing) I used and drop them into the directory from where you'll be running the binary (probably bin or the project root). Or make your own!
