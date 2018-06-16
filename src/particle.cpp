@@ -30,7 +30,9 @@ namespace fw {
 	std::uniform_real_distribution<float> Particle::pos_dist{0.0f, static_cast<float>(cf::width)};
 	std::uniform_int_distribution<std::uint8_t> Particle::col_dist{cf::min_col_sat, cf::max_col_sat};
 	std::uniform_int_distribution<std::uint8_t> Particle::cor_dist{cf::min_corona_parts, cf::max_corona_parts};
+	#ifndef NO_AUDIO
 	std::uniform_int_distribution<std::uint8_t> Particle::snd_dist{0, cf::sound_files - 1};
+	#endif
 	std::bernoulli_distribution Particle::stage_dist{cf::next_stage_prob};
 
 	#ifndef NO_AUDIO

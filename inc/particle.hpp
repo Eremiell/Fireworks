@@ -70,7 +70,9 @@ namespace fw {
 			static std::uniform_real_distribution<float> pos_dist;
 			static std::uniform_int_distribution<std::uint8_t> col_dist;
 			static std::uniform_int_distribution<std::uint8_t> cor_dist;
+			#ifndef NO_AUDIO
 			static std::uniform_int_distribution<std::uint8_t> snd_dist;
+			#endif
 			static std::bernoulli_distribution stage_dist;
 	};
 }
